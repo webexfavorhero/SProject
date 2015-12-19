@@ -1,0 +1,19 @@
+@mixin respond-to($media) {
+  @if $media == smartphones {
+    @media only screen and (max-width: 750px) { @content; }
+  } @else if $media == tablets {
+    @media only screen and (min-width: 750px) and (max-width: 1000px) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: 1000px) and (max-width: 1300px) { @content; }
+  }
+  @else if $media == large-screens {
+    @media only screen and (min-width: 1300px) { @content; }
+  }
+  @else if $media == very-large-screens {
+    @media only screen and (min-width: 1661px) { @content; }
+  }
+  @else if $media == for-print {
+    @media print { @content; }
+  }
+}

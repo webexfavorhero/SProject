@@ -2,6 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   didInsertElement() {
+
+    Ember.$("#status").fadeOut();
+    Ember.$("#preloader").delay(450).fadeOut("slow");
+    
     Ember.$('#map').gmap({
       'center': '-6.94010,107.62575',
       'zoom': 20,

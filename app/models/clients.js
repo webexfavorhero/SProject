@@ -17,7 +17,6 @@ export default Ember.Object.extend({
   	});
   	return aboutClients;
 	},
-
   ourClients() {
     Ember.$.getJSON('http://ec2-54-83-80-20.compute-1.amazonaws.com/api/clients', function(result){
       for (var i = 0; i < result.length; i ++) {
@@ -28,7 +27,6 @@ export default Ember.Object.extend({
     });
     return ourClients;
   },
-
   businessProcess() {
     Ember.$.getJSON('http://ec2-54-83-80-20.compute-1.amazonaws.com/api/clients', function(result){
       for (var i = 0; i < result.length; i ++) {
@@ -39,7 +37,6 @@ export default Ember.Object.extend({
     });
     return businessProcess;
   },
-
   chadRubinson() {
     Ember.$.getJSON('http://ec2-54-83-80-20.compute-1.amazonaws.com/api/clients', function(result){
       for (var i = 0; i < result.length; i ++) {
@@ -50,7 +47,6 @@ export default Ember.Object.extend({
     });
     return chadRubinson;
   },
-
   knowMore() {
     Ember.$.getJSON('http://ec2-54-83-80-20.compute-1.amazonaws.com/api/clients', function(result){
       for (var i = 0; i < result.length; i ++) {

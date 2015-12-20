@@ -1,10 +1,12 @@
 <section class="content-section-bg clearfix" style="background-image: url('assets/images/banner-slider/6.jpg');">
   <div class="mask-banner"></div>
   <div class="container">
+    {{#each model.aboutUs as |about|}}
     <div class="caption-banner">
-      <h1 class="title-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">about us</h1>
-      <p class="text-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="300ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.</p>
+      <h1 class="title-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{about.title}}</h1>
+      <p class="text-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="300ms">{{about.description}}</p>
     </div><!-- / .caption-banner -->
+    {{/each}}
   </div>
 
   <a class="link-arrow">

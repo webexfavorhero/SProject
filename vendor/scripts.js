@@ -38,22 +38,22 @@ window.Main = {
     });
 
     // NAVIGATION-HEADER
-    $('.main-navigation ul').superfish({
-      delay: 400,
-      animation: {opacity: 'show',
-        height: 'show'
-      },
-      animationOut: {
-        opacity: 'hide',
-        height: 'hide'
-      },
-      speed: 200,
-      speedOut: 200,
-      autoArrows: false
-    });
+    // $('.main-navigation ul').superfish({
+    //   delay: 400,
+    //   animation: {opacity: 'show',
+    //     height: 'show'
+    //   },
+    //   animationOut: {
+    //     opacity: 'hide',
+    //     height: 'hide'
+    //   },
+    //   speed: 200,
+    //   speedOut: 200,
+    //   autoArrows: false
+    // });
 
     // COPYING SITE-SUBHEADER
-    $(".site-subheader").clone(false).appendTo($(".copy-internal-header"));
+    // $(".site-subheader").clone(false).appendTo($(".copy-internal-header"));
     // grab an element
     var myElement = document.querySelector(".site-header");
     // construct an instance of Headroom, passing the element
@@ -64,22 +64,22 @@ window.Main = {
     // initialise
     headroom.init();
 
-    var internalheader = $(".copy-internal-header");
-    $(window).scroll(function() {
-      if ( $(window).width() >= 1500) {
-        if( $(window).scrollTop() >= 1050 ){
-          internalheader.addClass("onscroll");
-        }else{
-          internalheader.removeClass("onscroll");
-        }
-      }else{
-        if( $(window).scrollTop() >= 830 ){
-          internalheader.addClass("onscroll");
-        }else{
-          internalheader.removeClass("onscroll");
-        }
-      }
-    });
+    // var internalheader = $(".copy-internal-header");
+    // $(window).scroll(function() {
+    //   if ( $(window).width() >= 1500) {
+    //     if( $(window).scrollTop() >= 1050 ){
+    //       internalheader.addClass("onscroll");
+    //     }else{
+    //       internalheader.removeClass("onscroll");
+    //     }
+    //   }else{
+    //     if( $(window).scrollTop() >= 830 ){
+    //       internalheader.addClass("onscroll");
+    //     }else{
+    //       internalheader.removeClass("onscroll");
+    //     }
+    //   }
+    // });
 
     // BANNER-CAROUSEL
     $('.banner-carousel').owlCarousel({
@@ -205,30 +205,30 @@ window.Main = {
       }
     });
 
-    // CLONE NAVIGATION TO RWD-NAVIGATION IN MAIN-NAVIGATION
-    $(".main-navigation > ul").clone(false).find("ul,li").removeAttr("id").remove(".sub-menu").appendTo($(".rwd-navigation .mobile-nav"));
-    $(".mobile-nav").on('show.bs.collapse', function(){
-      $("body").on( 'click', function() {
-        $(".mobile-nav").collapse("hide");
-      });
-    });
+    // // CLONE NAVIGATION TO RWD-NAVIGATION IN MAIN-NAVIGATION
+    // $(".main-navigation > ul").clone(false).find("ul,li").removeAttr("id").remove(".sub-menu").appendTo($(".rwd-navigation .mobile-nav"));
+    // $(".mobile-nav").on('show.bs.collapse', function(){
+    //   $("body").on( 'click', function() {
+    //     $(".mobile-nav").collapse("hide");
+    //   });
+    // });
 
-    // CLONE NAVIGATION TO RWD-NAVIGATION IN INTERNAL-HEADER
-    $(".subheader-navigation > ul").clone(false).find("ul, li").appendTo($(".rwd-internal-navigation") );
-    // HANDLING FOR INTERNAL SIDEHABAR ON STICKY
-    $(".copy-internal-header .btn-showing-internal").click(function(event){
-      event.preventDefault();
-      $('.copy-internal-header .rwd-internal-navigation').slideToggle();
-    });
+    // // CLONE NAVIGATION TO RWD-NAVIGATION IN INTERNAL-HEADER
+    // $(".subheader-navigation > ul").clone(false).find("ul, li").appendTo($(".rwd-internal-navigation") );
+    // // HANDLING FOR INTERNAL SIDEHABAR ON STICKY
+    // $(".copy-internal-header .btn-showing-internal").click(function(event){
+    //   event.preventDefault();
+    //   $('.copy-internal-header .rwd-internal-navigation').slideToggle();
+    // });
 
-    $(".copy-internal-header .rwd-internal-navigation a").on( 'click' , function() {
-      var $target = $(".copy-internal-header .rwd-internal-navigation");
-      if( $target.is(':visible')){
-        $(".copy-internal-header .rwd-internal-navigation:visible").slideToggle();
-      }else{
-        $target.slideDown().siblings().slideUp();
-      }
-    });
+    // $(".copy-internal-header .rwd-internal-navigation a").on( 'click' , function() {
+    //   var $target = $(".copy-internal-header .rwd-internal-navigation");
+    //   if( $target.is(':visible')){
+    //     $(".copy-internal-header .rwd-internal-navigation:visible").slideToggle();
+    //   }else{
+    //     $target.slideDown().siblings().slideUp();
+    //   }
+    // });
 
     // HANDLING OFR INTERLA SIDEBAR ON OUTER-HEADER
     $(".outer-subheader .btn-showing-internal").click(function(event){

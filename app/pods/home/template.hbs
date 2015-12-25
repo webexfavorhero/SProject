@@ -1,15 +1,16 @@
-{{home-banner}}
-
+{{#each model.teamWorking as |banner|}}
+  {{home-banner title=banner.title description=banner.description}}
+{{/each}}
 <section id="home-enterprise" class="content-section content-homeenterprise clearfix">
   <div class="container">
 
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-
+        {{#each model.buildingDis as |dis|}}
         <header class="content-header">
-          <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">building disruptive enterprise</h2>
+          <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">{{dis.title}}</h2>
         </header><!-- / .content-header -->
-
+        {{/each}}
       </div>
     </div><!-- / .row -->
 
@@ -49,9 +50,9 @@
 
   </div>
 </section>
-
-{{home-services}}
-
+{{#each model.sciSer as |ser|}}
+  {{home-services title=ser.title description=ser.description}}
+{{/each}}
 <section id="client" class="content-section content-homeclient clearfix">
   <div class="container">
 

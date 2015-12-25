@@ -10,7 +10,7 @@
       <div class="col-md-8 col-md-offset-2">
         {{#each model.weAreSciensa as |sciensa|}}
         <header class="content-header">
-          <img src="assets/images/title-wearesciensa.png" alt="" class="icon-content-header" width="186">
+          <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{sciensa.gallery}}" alt="" class="icon-content-header" width="186">
           <h2 class="title-content">{{sciensa.title}}</h2>
         </header>
 
@@ -29,12 +29,12 @@
 
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        {{#each model.mission as |miss|}}
+        {{#each model.missionTitle as |missTitle|}}
         <header class="content-header">
-          <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{miss.title}}</h2>
+          <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{missTitle.title}}</h2>
         </header>
 
-        <p class="text-content-section wow fadeInUp" style="max-width: 855px; font-size: 24px;" data-wow-duration="1s" data-wow-delay="200ms">{{miss.description}}</p>
+        <p class="text-content-section wow fadeInUp" style="max-width: 855px; font-size: 24px;" data-wow-duration="1s" data-wow-delay="200ms">{{missTitle.description}}</p>
         {{/each}}
       </div>
     </div><!-- / .row -->
@@ -43,35 +43,14 @@
     <div class="space100"></div>
 
     <div class="row aboutmission-container">
-
+      {{#each model.mission as |miss|}}
       <div class="col-md-3 item-mission clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
         <div class="subitem-mission">
-          <img src="assets/images/mission/1.png" alt="" width="125">
-          <h3><a href="#">the process step one</a></h3>
+          <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{miss.gallery}}" alt="" width="125">
+          <h3><a href="#">{{miss.itemTitle}}</a></h3>
         </div>
       </div><!-- / .item-mission -->
-
-      <div class="col-md-3 item-mission clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
-        <div class="subitem-mission">
-          <img src="assets/images/mission/2.png" alt="" width="125">
-          <h3><a href="#">the process step one</a></h3>
-        </div>
-      </div><!-- / .item-mission -->
-
-      <div class="col-md-3 item-mission clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
-        <div class="subitem-mission">
-          <img src="assets/images/mission/3.png" alt="" width="125">
-          <h3><a href="#">the process step one</a></h3>
-        </div>
-      </div><!-- / .item-mission -->
-
-      <div class="col-md-3 item-mission no-arrow clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
-        <div class="subitem-mission">
-          <img src="assets/images/mission/4.png" alt="" width="125">
-          <h3><a href="#">the process step one</a></h3>
-        </div>
-      </div><!-- / .item-mission -->
-
+      {{/each}}
     </div><!-- / .aboutmission-container -->
 
   </div>
@@ -98,38 +77,15 @@
     <div class="space100"></div>
 
     <div class="row aboutculture-container">
-
-      <div class="col-md-3 item-culture clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
-        <div class="subitem-culture">
+      {{#each model.ourCulture as |cult|}}
+      <div class="col-md-12 item-culture clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
+        <div class="">
           <figure>
-            <img src="assets/images/culture/1.png" alt="">
+            <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{cult.gallery}}" alt="">
           </figure>
         </div>
       </div><!-- / .item-culture -->
-
-      <div class="col-md-3 item-culture clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
-        <div class="subitem-culture">
-          <figure>
-            <img src="assets/images/culture/2.png" alt="">
-          </figure>
-        </div>
-      </div><!-- / .item-culture -->
-
-      <div class="col-md-3 item-culture clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
-        <div class="subitem-culture">
-          <figure>
-            <img src="assets/images/culture/3.png" alt="">
-          </figure>
-        </div>
-      </div><!-- / .item-culture -->
-
-      <div class="col-md-3 item-culture clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
-        <div class="subitem-culture">
-          <figure>
-            <img src="assets/images/culture/4.png" alt="">
-          </figure>
-        </div>
-      </div><!-- / .item-culture -->
+      {{/each}}
 
     </div><!-- / .culture-container -->
 
@@ -138,9 +94,51 @@
 <!-- SECTION CULTURE END -->
 
 <!-- SECTION ABOUT-OFFICE BEGIN -->
-{{#each model.ourOffice as |off|}}
-  {{about-office title=off.title description=off.description}}
-{{/each}}
+<section id="about-office" class="content-section content-aboutoffice nopaddbottom clearfix">
+
+  <div class="bg-bluelight">
+    <div class="container">
+
+      <div class="space100"></div>
+      <div class="clearfix"></div>
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          {{#each model.ourOfficeTitle as |offTitle|}}
+          <header class="content-header">
+            <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{offTitle.title}}</h2>
+          </header>
+
+          <p class="text-content-section wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{offTitle.description}}</p>
+          {{/each}}
+        </div>
+      </div><!-- / .row -->
+
+      <div class="clearfix"></div>
+      <div class="space100"></div>
+      <div class="space100"></div>
+      <div class="space100"></div>
+
+
+    </div><!-- / .container -->
+  </div>
+
+  <div class="content-float bg-white">
+    <div class="container">
+
+      <div class="row">
+        {{#if model.ourOffice}}
+          {{about-office off=model.ourOffice}}
+        {{/if}}
+      </div>
+
+      <div class="clearfix"></div>
+      <div class="space100"></div>
+      <div class="space100"></div>
+    </div>
+  </div><!-- / .content-float -->
+
+</section>
 <!-- SECTION ABOUT-OFFICE END -->
 
 <!-- SECTION INFORMATION BEGIN -->

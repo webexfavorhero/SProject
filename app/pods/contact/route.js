@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import Contacts from '../../models/contacts';
+import Contacts from '../../models/contact';
 
 export default Ember.Route.extend({
 	model() {

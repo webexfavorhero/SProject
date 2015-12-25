@@ -6,6 +6,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('ux');
+  this.route('team');
+  this.route('services');
+  this.route('product');
+  this.route('license');
   this.route('labs');
   this.route('hire');
   this.route('contact');

@@ -1,10 +1,11 @@
 <!-- BANNER HOME BG BEGIN -->
-<section class="content-section-bg clearfix" style="background-image: url('assets/images/banner-slider/7.jpg');">
+{{#each model.ourClientsBanner as |clientsBanner|}}
+<section class="content-section-bg clearfix" style="background-image: url('http://ec2-54-83-80-20.compute-1.amazonaws.com{{clientsBanner.gallery}}');">
     <div class="mask-banner"></div>
     <div class="container">
         <div class="caption-banner" style="max-width: 680px;">
-            <h1 class="title-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">our clients</h1>
-            <p class="text-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.</p>
+            <h1 class="title-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{clientsBanner.title}}</h1>
+            <p class="text-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms" >{{clientsBanner.description}}</p>
         </div><!-- / .caption-banner -->
     </div>
 
@@ -12,6 +13,7 @@
         <i class="fa fa-angle-double-down"></i>
     </a>
 </section>
+{{/each}}
 <!-- BANNER HOME BG END -->
 
 <!-- SUBHEADER BEGIN -->
@@ -53,7 +55,7 @@
             <div class="col-md-6 col-md-offset-3">
                 {{#each model.aboutClients as |aClients|}}
                 <header class="content-header">
-                    <img src="assets/images/title-aboutclient.png" alt="" class="icon-content-header wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms" width="186">
+                    <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{aClients.gallery}}" alt="" class="icon-content-header wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms" width="186">
                     <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">{{aClients.title}}</h2>
                 </header>
 
@@ -72,12 +74,12 @@
         
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                {{#each model.ourClients as |oClients|}}
+                {{#each model.ourClientsTitle as |clientsTitle|}}
                 <header class="content-header">
-                    <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{oClients.title}}</h2>
+                    <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{clientsTitle.title}}</h2>
                 </header>
                 
-                <p class="text-content-section wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">{{oClients.description}}</p>
+                <p class="text-content-section wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">{{clientsTitle.description}}</p>
                 {{/each}}
             </div>
         </div>
@@ -101,55 +103,13 @@
             <div class="space100"></div>
 
             <div class="client-subcontainer">
-                
+                {{#each model.ourClients as |oClient|}}
                 <div class="col-md-3 item-client case clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
                     <figure class="alignnone">
-                        <img src="assets/images/clients/1.png" alt="">
+                        <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{oClient.Image}}" alt="">
                     </figure>
                 </div><!-- / .item-client -->
-
-                <div class="col-md-3 item-client integration clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
-                    <figure class="alignnone">
-                        <img src="assets/images/clients/2.png" alt="">
-                    </figure>
-                </div><!-- / .item-client -->
-
-                <div class="col-md-3 item-client financial clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
-                    <figure class="alignnone">
-                        <img src="assets/images/clients/3.png" alt="">
-                    </figure>
-                </div><!-- / .item-client -->
-
-                <div class="col-md-3 item-client business clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
-                    <figure class="alignnone">
-                        <img src="assets/images/clients/4.png" alt="">
-                    </figure>
-                </div><!-- / .item-client -->
-
-                <div class="col-md-3 item-client case clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
-                    <figure class="alignnone">
-                        <img src="assets/images/clients/5.png" alt="">
-                    </figure>
-                </div><!-- / .item-client -->
-
-                <div class="col-md-3 item-client integration clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
-                    <figure class="alignnone">
-                        <img src="assets/images/clients/6.png" alt="">
-                    </figure>
-                </div><!-- / .item-client -->
-
-                <div class="col-md-3 item-client financial clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
-                    <figure class="alignnone">
-                        <img src="assets/images/clients/7.png" alt="">
-                    </figure>
-                </div><!-- / .item-client -->
-
-                <div class="col-md-3 item-client business clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
-                    <figure class="alignnone">
-                        <img src="assets/images/clients/2.png" alt="">
-                    </figure>
-                </div><!-- / .item-client -->
-
+                {{/each}}
             </div>
 
         </div><!-- / .clientour-container -->
@@ -166,18 +126,17 @@
             
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
-                    {{#each model.businessProcess as |process|}}
+                    {{#each model.businessProcessTitle as |processTitle|}}
                     <header class="content-header">
-                        <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{process.title}}</h2>
+                        <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{processTitle.title}}</h2>
                     </header>
-                    <p class="text-content-section wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">{{process.description}}</p>
-                    {{/each}}
+                    <p class="text-content-section wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">{{processTitle.description}}</p>
 
                     <div class="clearfix"></div>
                     <div class="space75"></div>
 
                     <figure class="alignnone">
-                        <img src="assets/images/google.png" alt="">
+                        <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{processTitle.Image}}" alt="">
                     </figure>
 
                     <div class="clearfix"></div>
@@ -186,7 +145,7 @@
                     <div class="space100"></div>
                     <div class="space100"></div>
                     <div class="space100"></div>
-
+                    {{/each}}
                 </div>
             </div><!-- / .row -->
 
@@ -198,30 +157,9 @@
 
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    
-                    <div class="box-float wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms" style="margin-top: -400px;">
-                        <div class="business-carousel owl-carousel">
-                            
-                            <div class="item">
-                                <figure>
-                                    <img src="assets/images/banner-slider/1.jpg" alt="">
-                                </figure>
-                            </div>
-
-                            <div class="item">
-                                <figure>
-                                    <img src="assets/images/banner-slider/1.jpg" alt="">
-                                </figure>
-                            </div>
-
-                            <div class="item">
-                                <figure>
-                                    <img src="assets/images/banner-slider/1.jpg" alt="">
-                                </figure>
-                            </div>
-
-                        </div><!-- / .business-carousel -->
-                    </div><!-- / .box-float -->
+                    {{#if model.businessProcess}}
+                        {{clients-process bPro=model.businessProcess}}
+                    {{/if}}
 
                     <p class="text-center">
                         <a href="#" class="btn btn-white text-blue">full case</a>
@@ -235,7 +173,7 @@
                         <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">“{{people.description}}”</p>
 
                         <figure class="alignnone wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
-                            <img src="assets/images/client-testimonials.png" alt="">
+                            <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{people.Image}}" alt="">
                         </figure>
 
                         <h3 class="quote-authors wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms" >{{people.title}}</h3>
@@ -271,7 +209,7 @@
                 <div class="text-center">
                     <a href="#" class="btn btn-bluelight wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">contact us</a>
                     <div class="space45"></div>
-                    <p class="text-uppercase">or call +55 (11) 3142-9092</p>
+                    <p class="text-uppercase">{{more.phone}}</p>
                 </div>
                 {{/each}}
             </div>

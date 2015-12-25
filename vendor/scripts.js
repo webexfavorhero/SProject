@@ -6,8 +6,8 @@ window.Main = {
 
     $(window).on("load" , function() {
 
-      // $("#status").fadeOut();
-      // $("#preloader").delay(450).fadeOut("slow");
+      $("#status").fadeOut();
+      $("#preloader").delay(450).fadeOut("slow");
 
       // $('#map').gmap({
       //   'center': '-6.94010,107.62575',
@@ -82,19 +82,19 @@ window.Main = {
     // });
 
     // BANNER-CAROUSEL
-    // $('.banner-carousel').owlCarousel({
-    //   animateOut: 'fadeOut',
-    //   items: 1,
-    //   smartSpeed: 100,
-    //   autoplay: false,
-    //   autoplayTimeout: 3000,
-    //   loop: true,
-    //   nav: true,
-    //   navText: [
-    //     "Prev <i class='fa fa-angle-left fa-2x'></i>",
-    //     "Next <i class='fa fa-play'></i>"
-    //   ],
-    // });
+    $('.banner-carousel').owlCarousel({
+      animateOut: 'fadeOut',
+      items: 1,
+      smartSpeed: 100,
+      autoplay: false,
+      autoplayTimeout: 3000,
+      loop: true,
+      nav: true,
+      navText: [
+        "Prev <i class='fa fa-angle-left fa-2x'></i>",
+        "Next <i class='fa fa-play'></i>"
+      ],
+    });
 
     // UX-CAROUSEL
     $('.ux-carousel').owlCarousel({
@@ -107,19 +107,19 @@ window.Main = {
     });
 
     // ABOUT OFFICE CAROUSEL
-    // $('.aboutoffice-carousel, .office-carousel').owlCarousel({
-    //   animateOut: 'fadeOut',
-    //   items: 1,
-    //   smartSpeed: 100,
-    //   autoplay: false,
-    //   autoplayTimeout: 3000,
-    //   loop: true,
-    //   nav: true,
-    //   navText: [
-    //     "<i class='fa fa-angle-left'></i>",
-    //     "<i class='fa fa-angle-right'></i>"
-    //   ],
-    // });
+    $('.aboutoffice-carousel, .office-carousel').owlCarousel({
+      animateOut: 'fadeOut',
+      items: 1,
+      smartSpeed: 100,
+      autoplay: false,
+      autoplayTimeout: 3000,
+      loop: true,
+      nav: true,
+      navText: [
+        "<i class='fa fa-angle-left'></i>",
+        "<i class='fa fa-angle-right'></i>"
+      ],
+    });
 
     // PARTNERS-CAROUSEL
     $('.partners-carousel').owlCarousel({
@@ -152,31 +152,31 @@ window.Main = {
     });
 
     // SERVICES-CAROUSEL
-    // $('.services-carousel').owlCarousel({
-    //   mouseDrag: true,
-    //   margin: 50,
-    //   touchDrag: true,
-    //   nav: true,
-    //   navText: [
-    //     "<i class='fa fa-angle-left'></i>",
-    //     "<i class='fa fa-angle-right'></i>"
-    //   ],
-    //   responsiveClass: true,
-    //   responsive: {
-    //     0:{
-    //       items: 1
-    //     },
-    //     400:{
-    //       items: 1
-    //     },
-    //     600: {
-    //       items: 2
-    //     },
-    //     1000:{
-    //       items: 4
-    //     },
-    //   }
-    // });
+    $('.services-carousel').owlCarousel({
+      mouseDrag: true,
+      margin: 50,
+      touchDrag: true,
+      nav: true,
+      navText: [
+        "<i class='fa fa-angle-left'></i>",
+        "<i class='fa fa-angle-right'></i>"
+      ],
+      responsiveClass: true,
+      responsive: {
+        0:{
+          items: 1
+        },
+        400:{
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000:{
+          items: 4
+        },
+      }
+    });
 
     // LAST CASES-CAROUSEL
     $('.lastcases-carousel').owlCarousel({

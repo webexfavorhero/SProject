@@ -17,12 +17,14 @@ module.exports = function(defaults) {
   app.import('vendor/jquery.vimeo.api.js');
   app.import('vendor/owl.carousel.js');
   app.import('vendor/respond.min.js');
-  //app.import('vendor/respond.proxy.js');
-  //app.import('vendor/script.min.js');
+  // app.import('vendor/respond.proxy.js');
+  // app.import('vendor/script.min.js');
   app.import('vendor/superfish.js');
   app.import('vendor/video.js');
+  app.import('vendor/video.min.js');
   app.import('vendor/wow.js');
   app.import('vendor/scripts.js');
+  app.import('vendor/bootstrap.js');
   
 
   // Use `app.import` to add additional libraries to the generated

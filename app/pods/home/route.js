@@ -5,8 +5,12 @@ export default Ember.Route.extend({
 	model() {
 	    return Ember.RSVP.hash({
 			teamWorking: new Home().teamWorking(),
+			buildingDisTitle: new Home().buildingDisTitle(),
 			buildingDis: new Home().buildingDis(),
-			sciSer: new Home().sciSer()
+			sciSerTitle: new Home().sciSerTitle(),
+			sciSer: new Home().sciSer(),
+			clientsCase: new Home().clientsCase(),
+			loremIpsum: new Home().loremIpsum()
 	    });
 	}
 });

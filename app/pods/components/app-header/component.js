@@ -3,6 +3,17 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   didInsertElement() {
+
+    // grab an element
+    var myElement = document.querySelector(".site-header");
+    // construct an instance of Headroom, passing the element
+    var headroom = new window.Headroom(myElement, {
+      // "offset" : 780,
+      // "tolerance": 5,
+    });
+    // initialise
+    headroom.init();
+
     // NAVIGATION-HEADER
     Ember.$('.main-navigation ul').superfish({
       delay: 400,

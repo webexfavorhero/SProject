@@ -45,6 +45,7 @@ module.exports = function(environment) {
   }
 
   ENV.contentSecurityPolicy = {
+    'media-src': "'self' http://vjs.zencdn.net " ,
     'default-src': "'self' " ,
     'script-src': "'self' 'unsafe-inline' 'unsafe-eval' https://maps.google.com http://vjs.zencdn.net http://www.google-analytics.com/ga.js https://connect.facebook.net https://mts1.googleapis.com https://mts0.googleapis.com " +
     "http://connect.facebook.net https://platform.twitter.com http://platform.twitter.com https://cdn.syndication.twimg.com https://maps.google.com + " +

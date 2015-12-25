@@ -1,83 +1,13 @@
-<section id="homeservices" class="content-section bg-gradient-purple clearfix">
-  <div class="container">
+<div class="services-container">
 
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+  <div class="services-carousel owl-carousel">
+    {{#each services as |service|}}
+    <div class="item-services">
+      <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{service.gallery}}" width="120" alt="">
+      <h3><a href="#">{{service.itemTitle}}</a></h3>
+      <p>{{service.itemDescription}} </p>
+    </div><!-- / .item-services -->
+    {{/each}}
+  </div><!-- / .services-carousel -->
 
-        <header class="content-header">
-          <h2 class="title-content">{{title}}</h2>
-          <p class="subtitle-content">{{description}}</p>
-        </header>
-
-      </div>
-    </div><!-- / .row -->
-
-    <div class="services-container">
-
-      <div class="services-carousel owl-carousel">
-
-        <div class="item-services">
-          <img src="assets/images/services/1.png" width="120" alt="">
-          <h3><a href="#">digital transformation & culture</a></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. </p>
-        </div><!-- / .item-services -->
-
-        <div class="item-services">
-          <img src="assets/images/services/2.png" width="120" alt="">
-          <h3><a href="#">digital transformation & culture</a></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. </p>
-        </div><!-- / .item-services -->
-
-        <div class="item-services">
-          <img src="assets/images/services/3.png" width="120" alt="">
-          <h3><a href="#">digital transformation & culture</a></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. </p>
-        </div><!-- / .item-services -->
-
-        <div class="item-services" data-wow-duration="1s" data-wow-delay="250ms">
-          <img src="assets/images/services/4.png" width="120" alt="">
-          <h3><a href="#">digital transformation & culture</a></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. </p>
-        </div><!-- / .item-services -->
-
-        <div class="item-services wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
-          <img src="assets/images/services/1.png" width="120" alt="">
-
-          <h3><a href="#">digital transformation & culture</a></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. </p>
-        </div><!-- / .item-services -->
-
-        <div class="item-services wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
-          <img src="assets/images/services/2.png" width="120" alt="">
-          <h3><a href="#">digital transformation & culture</a></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. </p>
-        </div><!-- / .item-services -->
-
-        <div class="item-services wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
-          <img src="assets/images/services/3.png" width="120" alt="">
-          <h3><a href="#">digital transformation & culture</a></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. </p>
-        </div><!-- / .item-services -->
-
-        <div class="item-services wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
-          <img src="assets/images/services/4.png" width="120" alt="">
-          <h3><a href="#">digital transformation & culture</a></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. </p>
-        </div><!-- / .item-services -->
-
-      </div><!-- / .services-carousel -->
-
-    </div><!-- / .services-container -->
-
-    <hr class="content-sep">
-    <div class="box-info-services clearfix">
-      <div class="pull-left">
-        <p class="">know more about sciensa services & found out about the company</p>
-      </div>
-      <div class="pull-right">
-        {{#link-to 'about' class="btn btn-pink"}}about us{{/link-to}}
-      </div>
-    </div>
-
-  </div>
-</section>
+</div><!-- / .services-container -->

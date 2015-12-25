@@ -51,7 +51,7 @@ module.exports = function(environment) {
     "http://connect.facebook.net https://platform.twitter.com http://platform.twitter.com https://cdn.syndication.twimg.com https://maps.google.com + " +
     "https://maps.googleapis.com "  ,
     'font-src': "'self' http://fonts.gstatic.com data: https://fonts.gstatic.com " ,
-    'connect-src': "'self' http://ec2-54-83-80-20.compute-1.amazonaws.com/api "  ,
+    'connect-src': "'self' http://ec2-54-83-80-20.compute-1.amazonaws.com "  ,
     'img-src': "'self' https://csi.gstatic.com https://syndication.twitter.com https://www.facebook.com https://pbs.twimg.com https://abs.twimg.com" +
     " https://lh3.googleusercontent.com http://platform.twitter.com https://khms1.googleapis.com https://khms0.googleapis.com" +
     " https://maps.googleapis.com https://mts1.googleapis.com https://mts0.googleapis.com https://csi.gstatic.com/csi https://maps.gstatic.com ",

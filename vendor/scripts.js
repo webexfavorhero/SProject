@@ -304,5 +304,7 @@ window.Main = {
       $(".licensepartner-filter a").removeClass("active");
       $(this).addClass("active");
     });
+
+    $('[rel*=facebox]').facebox()
   }
 };

@@ -9,6 +9,7 @@
 @import "font-awesome";
 @import "owl.carousel";
 @import "video-js";
+@import "facebox";
 
 /* Helpers */
 @import "helpers/variables";
@@ -1687,6 +1688,9 @@ form .field-box {
   width: 100%;
   z-index: 22;
   padding: 20px 0;
+}
+.header-lightbox.modal-header-lightbox {
+  position: relative;
 }
 .header-lightbox .container {
   position: relative;

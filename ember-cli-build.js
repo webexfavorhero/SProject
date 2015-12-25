@@ -25,6 +25,7 @@ module.exports = function(defaults) {
   app.import('vendor/wow.js');
   app.import('vendor/scripts.js');
   app.import('vendor/bootstrap.js');
+  app.import('vendor/facebox.js');
   
 
   // Use `app.import` to add additional libraries to the generated

@@ -1,0 +1,427 @@
+{{app-header}}
+
+{{#if model.teamWorking}}
+  {{home-banner banners=model.teamWorking}}
+{{/if}}
+<section id="home-enterprise" class="content-section content-homeenterprise clearfix">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        {{#each model.buildingDisTitle as |disTitle|}}
+        <header class="content-header">
+          <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">{{disTitle.title}}</h2>
+        </header><!-- / .content-header -->
+        {{/each}}
+      </div>
+    </div><!-- / .row -->
+
+    <div class="row homeenterprise-container">
+      {{#each model.buildingDis as |dis|}}
+      <div class="col-md-4 item-enterprise clearfix wow fadeInLeft" data-wow-duration="1s" data-wow-delay="250ms">
+        <div class="subitem-enterprise">
+          <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{dis.gallery}}" width="130" alt="">
+          <h3><a href="#">{{dis.itemTitle}}</a></h3>
+          <p>{{dis.itemDescription}}</p>
+        </div>
+      </div><!-- / .item-enterprise -->
+      {{/each}}
+    </div><!-- / .row .homeenterprise-container -->
+
+    <div class="clearfix"></div>
+    <div class="space100"></div>
+    <div class="text-center">
+    {{#link-to 'about' class="btn btn-pink"}}about us{{/link-to}}
+    </div>
+
+  </div>
+</section>
+
+<section id="homeservices" class="content-section bg-gradient-purple clearfix">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        {{#each model.sciSerTitle as |serTitle|}}
+        <header class="content-header">
+          <h2 class="title-content">{{serTitle.title}}</h2>
+          <p class="subtitle-content">{{serTitle.description}}</p>
+        </header>
+        {{/each}}
+      </div>
+    </div><!-- / .row -->
+    
+    {{#if model.sciSer}}
+      {{home-services services=model.sciSer}}
+    {{/if}}
+
+    <hr class="content-sep">
+    <div class="box-info-services clearfix">
+      <div class="pull-left">
+        <p class="">know more about sciensa services & found out about the company</p>
+      </div>
+      <div class="pull-right">
+        {{#link-to 'about' class="btn btn-pink"}}about us{{/link-to}}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="client" class="content-section content-homeclient clearfix">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+
+        <header class="content-header">
+          <h2 class="title-content-small">clients case</h2>
+        </header>
+
+      </div>
+    </div><!-- / .row -->
+
+    <div class="row homeclient-container">
+      {{#each model.clientsCase as |cCase|}}
+      <div class="col-md-3 item-client clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
+        <div class="subitem-client">
+          <figure>
+            <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{cCase.Image}}" data-toggle="modal" data-target="#Modal{{cCase.caseGroupId}}" style="cursor:pointer;"  alt="">
+          </figure>
+
+          <a data-toggle="modal" data-target="#Modal{{cCase.caseGroupId}}" style="cursor:pointer;">
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </div>
+      </div><!-- / .item-client -->
+      {{/each}}
+
+      <!-- Modal -->
+      {{#each model.cases as |case|}}
+      <div id="Modal{{case.id}}" class="modal fade" role="dialog">
+        <div class="container-fluid">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+              <!-- HEADER-LIGHTBOX BEGIN -->
+              <header class="header-lightbox modal-header-lightbox bg-blue">
+                  <div class="container">
+                      
+                      <a href="#" class="logo-abs">
+                          <img src="assets/images/logo-white-small.png" alt="">
+                      </a>
+
+                      <div class="nav-arrow">
+                          <a href="#"><i class="fa fa-angle-left"></i></a>
+                          <span class="text">{{case.name}}</span>
+                          <a href="#"><i class="fa fa-angle-right"></i></a>
+                      </div>
+
+                  </div>
+              </header>
+              <!-- HEADER-LIGHTBOX END -->
+
+              <!-- BANNER LIGHTBOX BEGIN -->
+              <section class="content-banner-lightbox custom-content-banner-lightbox clearfix" style="background-image: url('http://ec2-54-83-80-20.compute-1.amazonaws.com{{case.Image}}')">
+                  <div class="mask-banner"></div>
+                  <div class="container">
+                      <div class="caption-lightbox">
+                          <!-- <figure class="integration-logo wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
+                              <img src="assets/images/google.png">
+                          </figure> -->
+                      </div>
+                  </div>
+              </section>
+              <!-- BANNER LIGHTBOX END -->
+
+              <!-- LOREM MIPSUM BEGIN -->
+              <section id="loremipsum" class="content-section content-mipsum clearfix">
+                  <div class="bg-white">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-md-8 col-md-offset-2">
+                                  
+                                  <header class="content-header">
+                                      <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">{{case.internalTitle}}</h2>
+                                  </header>
+
+                                  <p class="text-content-section wow fadeInUp" data-wow-duration="1s" data-wow-delay="300ms" style="max-width: 555px;">{{case.description}}</p>
+
+                              </div>
+                          </div><!-- / .row -->
+
+                          <div class="clearfix"></div>
+                          <div class="space100"></div>
+                          <div class="space100"></div>
+
+                      </div>
+                  </div>
+
+                  <div class="content-float bg-blue">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-md-8 col-md-offset-2">
+                                  
+                                  <div class="box-float wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
+
+                                      <div class="video-container">
+                                          <!-- <video id="demo_video" class="video-js custom-video-js vjs-default-skin vjs-big-play-centered video-js-fullscreen" controls preload="auto" poster="assets/images/video-poster.png" width="auto" height="auto" data-setup="{}">
+                                              <source src="{{case.VideoLinkUrl}}" type='video/mp4'>
+                                              <source src="{{case.VideoLinkUrl}}" type='video/webm'>
+                                          </video> -->
+                                          <iframe src="{{case.VideoLinkUrl}}" width="600" height="400" frameborder="0" allowfullscreen></iframe>
+                                      </div><!-- / .video-container -->
+
+
+                                  </div><!-- / .box-float -->
+
+                              </div>
+                          </div><!-- / .row -->
+
+                          <div class="row">
+                              <div class="col-md-8 col-md-offset-2">
+                                  
+                                  <p class="text-content-section" style="font-size: 21px; color: white; text-align: center;">{{case.descriptionTwo}}</p>
+
+                                  <div class="clearfix"></div>
+                                  <div class="space100"></div>
+
+                                  <p class="text-content-section" style="font-size: 21px; color: white; text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.</p>
+
+                              </div>
+                          </div><!-- / .row -->
+
+                          <div class="clearfix"></div>
+                          <div class="space100"></div>
+
+                      </div>
+                  </div><!-- / .content-float -->
+
+              </section>
+              <!-- LOREM MIPSUM END -->
+
+
+              <!-- SECTION UX-LASTCASES BEGIN -->
+              <section id="last-cases" class="content-section content-uxlastcases clearfix">
+                  <div class="container">
+                      
+                      <div class="row">
+                          <div class="col-md-8 col-md-offset-2">
+                              
+                              <header class="content-header">
+                                  <h2 class="title-content">recent cases</h2>
+                              </header>
+
+                              <p class="text-content-section">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.</p>
+
+                          </div>
+                      </div><!-- / .row -->
+
+                      <div class="clearfix"></div>
+                      <div class="space100"></div>
+
+                      <div class="uxlastcases-container">
+                          
+                          <div class="lastcases-carousel owl-carousel">
+
+                              <div class="item-lastcases">
+                                  <div class="subitem-lastcases">
+                                      <div class="caption-lastcases">
+                                          <h3>user experience in google glas</h3>
+
+                                          <div class="link-container">
+                                              <a href="#" class="btn btn-line-white">full case</a>
+                                          </div>
+                                      </div>
+
+                                      <img src="assets/images/blog/1.jpg" alt="">
+                                  </div>
+                              </div>
+
+                              <div class="item-lastcases">
+                                  <div class="subitem-lastcases">
+                                      <div class="caption-lastcases">
+                                          <h3>user experience in google glas</h3>
+
+                                          <div class="link-container">
+                                              <a href="#" class="btn btn-line-white">full case</a>
+                                          </div>
+                                      </div>
+
+                                      <img src="assets/images/blog/2.jpg" alt="">
+                                  </div>
+                              </div>
+
+                              <div class="item-lastcases">
+                                  <div class="subitem-lastcases">
+                                      <div class="caption-lastcases">
+                                          <h3>user experience in google glas</h3>
+
+                                          <div class="link-container">
+                                              <a href="#" class="btn btn-line-white">full case</a>
+                                          </div>
+                                      </div>
+
+                                      <img src="assets/images/blog/3.jpg" alt="">
+                                  </div>
+                              </div>
+
+                              <div class="item-lastcases">
+                                  <div class="subitem-lastcases">
+                                      <div class="caption-lastcases">
+                                          <h3>user experience in google glas</h3>
+
+                                          <div class="link-container">
+                                              <a href="#" class="btn btn-line-white">full case</a>
+                                          </div>
+                                      </div>
+
+                                      <img src="assets/images/blog/1.jpg" alt="">
+                                  </div>
+                              </div>
+
+                              <div class="item-lastcases">
+                                  <div class="subitem-lastcases">
+                                      <div class="caption-lastcases">
+                                          <h3>user experience in google glas</h3>
+
+                                          <div class="link-container">
+                                              <a href="#" class="btn btn-line-white">full case</a>
+                                          </div>
+                                      </div>
+
+                                      <img src="assets/images/blog/2.jpg" alt="">
+                                  </div>
+                              </div>
+
+                              <div class="item-lastcases">
+                                  <div class="subitem-lastcases">
+                                      <div class="caption-lastcases">
+                                          <h3>user experience in google glas</h3>
+
+                                          <div class="link-container">
+                                              <a href="#" class="btn btn-line-white">full case</a>
+                                          </div>
+                                      </div>
+
+                                      <img src="assets/images/blog/3.jpg" alt="">
+                                  </div>
+                              </div>
+
+                          </div>
+
+                      </div><!-- / .uxlastcases-container -->
+
+                  </div>
+              </section>
+              <!-- SECTION UX-LASTCASES END -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {{/each}}
+      <!-- Modal End -->
+
+    </div><!-- / .client-container -->
+
+  </div>
+</section>
+
+<section id="home-articles" class="content-section content-homearticles clearfix">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        {{#each model.loremIpsum as |lorem|}}
+        <header class="content-header">
+          <h2 class="title-content">{{lorem.title}}</h2>
+        </header>
+        {{/each}}
+      </div>
+    </div><!-- / .row -->
+
+    <div class="row articles-container">
+
+      <div class="col-md-4 item-articles wow fadeInLeft" data-wow-duration="1s" data-wow-delay="250ms">
+        <div class="subitem-articles clearfix">
+          <div class="caption-articles">
+            <header>
+              <p class="meta-extra">01.08.2015</p>
+              <h3>digital transformation & culture</h3>
+            </header>
+            <a href="#" class="link">
+              <i class="fa fa-mail-forward"></i>
+            </a>
+            <footer>
+              <figure>
+                <img src="assets/images/user70.png" alt="">
+              </figure>
+              <p class="meta-authors">By Renan Barreto</p>
+            </footer>
+          </div>
+          <img src="assets/images/blog/1.jpg" alt="">
+        </div>
+      </div><!-- / .item-articles -->
+
+      <div class="col-md-4 item-articles wow fadeInUp" data-wow-delay="250ms" data-wow-duration="1s">
+        <div class="subitem-articles clearfix">
+          <div class="caption-articles">
+            <header>
+              <p class="meta-extra">01.08.2015</p>
+              <h3>digital transformation & culture</h3>
+            </header>
+            <a href="#" class="link">
+              <i class="fa fa-mail-forward"></i>
+            </a>
+            <footer>
+              <figure>
+                <img src="assets/images/user70.png" alt="">
+              </figure>
+              <p class="meta-authors">By Renan Barreto</p>
+            </footer>
+          </div>
+          <img src="assets/images/blog/2.jpg" alt="">
+        </div>
+      </div><!-- / .item-articles -->
+
+      <div class="col-md-4 item-articles wow fadeInRight" data-wow-duration="1s" data-wow-delay="250ms" >
+        <div class="subitem-articles clearfix">
+          <div class="caption-articles">
+            <header>
+              <p class="meta-extra">01.08.2015</p>
+              <h3>digital transformation & culture</h3>
+            </header>
+            <a href="#" class="link">
+              <i class="fa fa-mail-forward"></i>
+            </a>
+            <footer>
+              <figure>
+                <img src="assets/images/user70.png" alt="">
+              </figure>
+              <p class="meta-authors">By Renan Barreto</p>
+            </footer>
+          </div>
+          <img src="assets/images/blog/3.jpg" alt="">
+        </div>
+      </div><!-- / .item-articles -->
+
+    </div><!-- / .articles-container -->
+
+    <div class="clearfix"></div>
+    <div class="space75"></div>
+    <div class="text-center">
+      <a href="#" class="btn btn-line-gray">see our awesome articles</a>
+    </div>
+
+  </div>
+</section>
+{{app-footer}}

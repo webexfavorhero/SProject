@@ -1,0 +1,21 @@
+<div class="licensepartner-nav">
+    <ul class="licensepartner-filter">
+        <li><a href="#" data-filter="*" class="active">all</a></li>
+        {{#each weLicensingFilter as |LicFilter|}}
+        <li><a href="#" data-filter=".{{LicFilter.clientsCategoryGroupId}}">{{LicFilter.clientsCategoryGroup}}</a></li>
+        {{/each}}
+    </ul>
+</div><!-- / .licensing-nav -->
+
+<div class="clearfix"></div>
+<div class="space100"></div>
+
+<div class="licensepartner-subcontainer">
+    {{#each weLicensing as |wLic|}}
+    <div class="col-md-3 item-licensing {{wLic.clientsCategoryGroupId}} clearfix">
+        <figure class="alignnone">
+            <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{wLic.Image}}" data-toggle="modal" data-target="#Modal{{wLic.caseGroupId}}" style="cursor:pointer;" alt="{{wLic.title}}">
+        </figure>
+    </div><!-- / .item-licensing -->
+    {{/each}}                
+</div>

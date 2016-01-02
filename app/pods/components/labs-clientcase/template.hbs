@@ -1,0 +1,20 @@
+<div class="labscompanies-nav">
+    <ul class="labscompanies-filter">
+        <li><a href="#" data-filter="*" class="active">all</a></li>
+        {{#each ourCompaniesFilter as |comFilter|}}
+        <li><a href="#" data-filter=".{{comFilter.clientsCategoryGroupId}}">{{comFilter.clientsCategoryGroup}}</a></li>
+        {{/each}}
+    </ul>
+</div><!-- / .labscompanies-nav -->
+
+<div class="space100"></div>
+
+<div class="labscompanies-subcontainer">
+    {{#each ourCompanies as |oCom|}}
+    <div class="col-md-3 item-labscompanies {{oCom.clientsCategoryGroupId}} clearfix">
+        <figure class="alignnone">
+            <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{oCom.gallery}}" data-toggle="modal" data-target="#Modal{{oCom.caseGroupId}}" style="cursor:pointer;" alt="">
+        </figure>
+    </div><!-- / .item-labscompanies -->
+    {{/each}}
+</div>

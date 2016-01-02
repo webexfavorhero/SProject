@@ -1,0 +1,15 @@
+<section class="content-section-bg clearfix" style="background-image: url('assets/images/banner-slider/6.jpg');">
+  <div class="mask-banner"></div>
+  <div class="container">
+    {{#each model.aboutUs as |about|}}
+    <div class="caption-banner">
+      <h1 class="title-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{about.title}}</h1>
+      <p class="text-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="300ms">{{about.description}}</p>
+    </div><!-- / .caption-banner -->
+    {{/each}}
+  </div>
+
+  <a class="link-arrow">
+    <i class="fa fa-angle-double-down"></i>
+  </a>
+</section>

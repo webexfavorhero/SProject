@@ -1,0 +1,220 @@
+{{app-header-subheader}}
+<!-- BANNER HOME BG BEGIN -->
+{{#each model.ourAwePro as |ourAwe|}}
+<section class="content-section-bg clearfix" style="background-image: url('http://ec2-54-83-80-20.compute-1.amazonaws.com{{ourAwe.gallery}}');">
+    <div class="mask-banner"></div>
+    <div class="container">
+        <div class="caption-banner" style="max-width: 680px;">
+            <h1 class="title-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{ourAwe.title}}</h1>
+            <p class="text-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">{{ourAwe.description}}</p>
+        </div><!-- / .caption-banner -->
+    </div>
+</section>
+{{/each}}
+<!-- BANNER HOME BG END -->
+
+<!-- SUBHEADER BEGIN -->
+<div class="outer-subheader">
+    <div class="site-subheader bg-white rwd-orange clearfix">
+        <div class="container">
+            
+            <div class="subheader-navigation subheader-orange">
+                <ul>
+                    <li><a href="product#product-introduce">about</a></li>
+                    <li><a href="product#product-process">process</a></li>
+                    <li><a href="product#product-culture">culture</a></li>
+                    <li><a href="product#product-experience">ux</a></li>
+                    <li><a href="product#product-smart">smart apis & iot</a></li>
+                </ul>
+            </div><!-- / .subheader-navigation -->
+
+            <div class="rwd-internal-header clearfix">
+                <span class="btn-showing-internal"><i class="fa fa-bars"></i> pages internal</span>
+                
+                <div class="clearfix"></div>
+                <ul class="rwd-internal-navigation"></ul>
+            </div>
+
+            <div class="pull-right">
+                <a href="#" class="btn btn-orange">contact us</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- SUBHEADER END -->
+
+<!-- SECTION PRODUCT-INTRODUCE BEGIN -->
+<section id="product-introduce" class="content-section content-productintroduce bg-gradient-orange clearfix">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                {{#each model.aboutOurPro as |aboutOur|}}
+                <header class="content-header">
+                    <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{aboutOur.title}}</h2>
+                </header>
+
+                <p class="text-content-section wow fadeInUp" style="max-width: 855px; font-size: 24px;" data-wow-duration="1s" data-wow-delay="250ms">{{aboutOur.description}}</p>
+                {{/each}}
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- SECTION PRODUCT-INTRODUCE END -->
+
+<!-- SECTION PRODUCT-PROCESS BEGIN -->
+<section id="product-process" class="content-section content-productprocess bg-gray clearfix">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                {{#each model.productPro as |pPro|}}
+                <header class="content-header">
+                    <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{pPro.title}}</h2>
+                </header>
+
+                <p class="text-content-section wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms" style="max-width: 855px; font-size: 24px;">{{pPro.description}}</p>
+                {{/each}}
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- SECTION PRODUCT-PROCESS END -->
+
+<!-- SECTION PRODUCT-CULTURE BEGIN -->
+<section id="product-culture" class="content-section-bg content-productculture clearfix" style="background-image: url('assets/images/banner-section/1.jpg');">
+    <div class="mask-section"></div>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                {{#each model.digitalTra as |dTra|}}
+                <header class="content-header">
+                    <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{dTra.gallery}}" alt="" class="icon-content-header wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms"width="186">
+                    <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">{{dTra.title}}</h2>
+                </header>
+
+                <p class="text-content-section wow fadeInUp" style="max-width: 555px; color: white;" data-wow-duration="1s" data-wow-delay="300ms">{{dTra.description}}</p>
+                {{/each}}
+            </div>    
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="space45"></div>
+        <p class="text-center">
+            <a href="#" class="btn btn-orange wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">see more</a>
+        </p>
+
+    </div>
+</section>
+<!-- SECTION PRODUCT-CULTURE END -->
+
+<!-- SECTION PRODUCT-EXPERIENCE BEGIN -->
+<section id="product-experience" class="content-section content-productexperience">
+    <div class="container">
+        {{#each model.userExp as |uExp|}}
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                
+                <header class="content-header">
+                    <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{uExp.title}}</h2>
+                </header>
+                <p class="text-content-section wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">{{uExp.description}}</p>
+                
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="space100"></div>
+
+        <div class="row productexperience-container">
+
+            <div class="col-md-10 col-md-offset-1">
+                <ul class="list-experience products-user-experience">
+                    <li>
+                        <figure>
+                            <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{uExp.gallery}}" alt="">
+                        </figure>
+                    </li>
+                </ul><!-- / .list-experience -->    
+            </div>
+            
+        </div><!-- / .productexperience-container -->
+        {{/each}}
+
+        <div class="clearfix"></div>
+        <div class="space100"></div>
+        <p class="text-center">
+            <a href="#" class="btn btn-orange wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">see more</a>
+        </p>
+
+        <hr class="content-sep black" id="product-smart">
+
+        {{#each model.smartApi as |sApi|}}
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                
+                <header class="content-header">
+                    <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">{{sApi.title}}</h2>
+                </header>
+
+                <p class="text-content-section wow fadeInUp" style="max-width: 555px;" data-wow-duration="1s" data-wow-delay="300ms">{{sApi.description}}</p>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="space100"></div>
+
+        <div class="row productexperience-container">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row row-inner">
+                    
+                    <div class="col-md-12 item-productexperience clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
+                        <div class="subitem-productexperience">
+                            <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{sApi.gallery}}" alt="">
+                        </div>
+                    </div><!-- / .item-productexperience -->
+
+                </div>
+            </div>
+        </div><!-- / .productexperience-container -->
+        {{/each}}
+
+        <div class="clearfix"></div>
+        <div class="space100"></div>
+        <p class="text-center">
+            <a href="#" class="btn btn-orange">see more</a>
+        </p>
+
+    </div>
+</section>
+<!-- SECTION PRODUCT-EXPERIENCE END -->
+
+<!-- SECTION INFORMATION BEGIN -->
+<section id="information" class="content-section content-information bg-bluedark clearfix">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                {{#each model.knowMore as |more|}}
+                <header class="content-header">
+                    <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{more.title}}</h2>
+                </header>
+
+                <div class="clearfix"></div>
+                <div class="text-center">
+                    <a href="#" class="btn btn-orange wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">contact us</a>
+                    <div class="space45"></div>
+                    <p class="text-uppercase wow fadeInUp" data-wow-duration="1s" data-wow-delay="300ms">{{more.phone}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- SECTION INFORMATION END -->
+{{app-footer}}

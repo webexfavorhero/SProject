@@ -1,0 +1,21 @@
+<div class="client-nav">
+    <ul class="client-filter">
+        <li><a href="#" data-filter="*" class="active">all</a></li>
+        {{#each ourClientsFilter as |oFilter|}}
+        <li><a href="#" data-filter=".{{oFilter.clientsCategoryGroupId}}">{{oFilter.clientsCategoryGroup}}</a></li>
+        {{/each}}
+    </ul>
+</div><!-- / .client-nav -->
+
+<div class="clearfix"></div>
+<div class="space100"></div>
+
+<div class="client-subcontainer">
+    {{#each ourClients as |oClient|}}
+    <div class="col-md-3 item-client {{oClient.clientsCategoryGroupId}} clearfix">
+        <figure class="alignnone">
+            <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{oClient.Image}}" data-toggle="modal" data-target="#Modal{{oClient.caseGroupId}}" style="cursor:pointer;" alt="">
+        </figure>
+    </div><!-- / .item-client -->
+    {{/each}}
+</div>

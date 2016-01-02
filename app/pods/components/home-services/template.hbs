@@ -1,0 +1,13 @@
+<div class="services-container">
+
+  <div class="services-carousel owl-carousel">
+    {{#each services as |service|}}
+    <div class="item-services">
+      <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{service.gallery}}" width="120" alt="">
+      <h3><a href="#">{{service.itemTitle}}</a></h3>
+      <p>{{service.itemDescription}} </p>
+    </div><!-- / .item-services -->
+    {{/each}}
+  </div><!-- / .services-carousel -->
+
+</div><!-- / .services-container -->

@@ -1,0 +1,22 @@
+<!-- BANNER HOME BG BEGIN -->
+<section  class="content-banner clearfix">
+    <div class="ux-carousel owl-carousel">
+        {{#each banners as |banner|}}
+        <div class="item-banner" style="background-image: url('http://ec2-54-83-80-20.compute-1.amazonaws.com{{banner.gallery}}');">
+            <div class="mask-banner"></div>
+            <div class="container">
+                <div class="caption-banner" style="max-width: 680px;">
+                    <h1 class="title-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{banner.title}}</h1>
+                    <p class="text-banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">{{banner.description}}</p>
+                    <a href="#" class="btn btn-green-light wow fadeInUp " data-wow-duration="1s" data-wow-delay="300ms">contact us</a>
+                </div><!-- / .caption-banner -->                    
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <a class="link-arrow">
+        <i class="fa fa-angle-double-down"></i>
+    </a>
+</section>
+<!-- BANNER HOME BG END -->

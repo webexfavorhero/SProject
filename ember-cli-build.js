@@ -5,6 +5,12 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    minifyJS: {
+      enabled: false
+    },
+    minifyCSS: {
+      enabled: true
+    }
   });
 
   app.import('vendor/maps.google.com.js');
@@ -19,7 +25,6 @@ module.exports = function(defaults) {
   app.import('vendor/respond.min.js');
   app.import('vendor/superfish.js');
   app.import('vendor/video.js');
-  app.import('vendor/video.min.js');
   app.import('vendor/wow.js');
   app.import('vendor/scripts.js');
   app.import('vendor/bootstrap.js');

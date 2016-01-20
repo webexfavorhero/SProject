@@ -1,0 +1,86 @@
+<div class="category-content">
+    <!-- BANNER BLOG CATEGORY BEGIN -->
+    <section class="content-section content-section-blog bg-gray clearfix">
+        <div class="container">
+            <h3 class="title-blog-section">categories</h3>
+            <ul class="list-categories">
+                <li>
+                    <a href="#" class="active" data-filter="*">all</a>
+                </li>
+                {{#each categoryFilter as |cFilter|}}
+                <li>
+                    <a href="#" data-filter=".{{cFilter.categorieId}}">{{cFilter.categorieName}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+    <!-- BANNER BLOG CATEGORY END -->
+
+    <!-- BANNER BLOG ITEM BEGIN -->
+    <section class="content-section content-blog-item clearfix">
+        <div class="container">
+            <header class="header-blog-item">
+                <h3>sort</h3> 
+
+                <div class="btn-group combo-box">
+                    <a href="javascript:;" class="dropdown-toggle btn-combo" data-toggle="dropdown">select sorting <span class="caret"></span></a>
+
+                    <ul class="dropdown-menu menu-sorting">
+                        <li><a href="javascript:;">newer first</a></li>
+                        <li><a href="javascript:;">older first</a></li>
+                    </ul>
+                </div><!-- / .combo-box -->
+            </header>
+
+            <div class="row blogs-wrapper">
+                <div class="category-container">
+                    {{#each blogs as |blog|}}
+                    <div class="col-md-3 item-blog clearfix {{blog.categorieId}}">
+                        <div class="subitem-blog">
+                            <div class="inner-blog">
+
+                                <a href="#" class="more">full article</a>
+
+                                <div class="article-info">
+                                    <p class="info-date">{{blog.postDate}}</p>
+                                    <h3>{{blog.postTitle}}</h3>
+
+                                    <p class="info-category">
+                                        <a href="#">api</a>
+                                        <a href=".{{blog.categorieId}}">{{blog.categorieName}}</a>
+                                    </p>
+                                </div>
+
+                                <div class="user-info">
+                                    <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{blog.authorImage}}" alt="">
+                                    <div class="author-info">
+                                        <h4>created by</h4>
+                                        <span class="user-authors">{{blog.author}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{blog.featureImage}}" alt="" class="img-thumb">
+                        </div>
+                    </div><!-- / .item-blog -->
+                    {{/each}}
+                </div><!-- / .category-container -->
+                
+                <div class="clearfix"></div>
+                <div class="space30"></div>
+
+                <p class="text-center">
+                    <a href="" class="btn btn-line btn-line-gray">scroll to show more results ...</a>
+                </p>
+
+                <div class="clearfix"></div>
+                <div class="space30"></div>
+
+            </div><!-- / .row .blgos-wrapper -->
+
+        </div>
+    </section>
+    <!-- BANNER BLOG ITEM END -->
+
+
+</div><!-- / .category-content -->

@@ -1,20 +1,19 @@
+{{#if model.userDig}}
 {{app-header-subheader}}
-{{#if model.userExp}}
-    {{ux-banner banners=model.userExp}}
-{{/if}}
+{{digital-transformation-banner banners=model.userDig}}
 
 <!-- SUBHEADER BEGIN -->
 <div class="outer-subheader">
-    <div class="site-subheader bg-green-light clearfix">
+    <div class="site-subheader bg-pink-pallete clearfix">
         <div class="container">
             
             <div class="subheader-navigation">
                 <ul>
-                    <li><a href="ux#ux-introduce">about</a></li>
-                    <li><a href="ux#ux-process">process</a></li>
-                    <li><a href="ux#ux-quote">quote</a></li>
-                    <li><a href="ux#ux-whatwedo">what we do</a></li>
-                    <li><a href="ux#last-cases">last cases</a></li>
+                    <li><a href="digital-transformation#dt-introduce">about</a></li>
+                    <li><a href="digital-transformation#dt-process">process</a></li>
+                    <li><a href="digital-transformation#dt-quote">quote</a></li>
+                    <li><a href="digital-transformation#dt-whatwedo">what we do</a></li>
+                    <li><a href="digital-transformation#last-cases">last cases</a></li>
 
                     <!-- <li><a href="ux#">about</a></li>
                     <li><a href="ux#">process</a></li>
@@ -35,7 +34,7 @@
             </div>
 
             <div class="pull-right">
-                <a href="#" class="btn btn-white text-green-light">contact us</a>
+                <a href="#" class="btn btn-white text-pink-pallete">contact us</a>
             </div>
 
         </div>
@@ -43,8 +42,8 @@
 </div>
 <!-- SUBHEADER END -->
 
-<!-- SECTION UX-INTRODUCE BEGIN -->
-<section id="ux-introduce" class="content-section content-uxintroduce  clearfix">
+<!-- SECTION dt-introduce BEGIN -->
+<section id="dt-introduce" class="content-section content-uxintroduce  clearfix">
     <div class="container">
         
         <div class="row">
@@ -62,10 +61,10 @@
 
     </div>
 </section>
-<!-- SECTION UX-INTRODUCE END -->
+<!-- SECTION dt-introduce END -->
 
-<!-- SECTION UX-PROCESS BEGIN -->
-<section id="ux-process" class="content-section content-uxprocess bg-gradient-green-light clearfix">
+<!-- SECTION dt-process BEGIN -->
+<section id="dt-process" class="content-section content-uxprocess bg-pink-pallete clearfix">
     <div class="container">
         
         <div class="row">
@@ -98,27 +97,28 @@
 </section>
 <!-- SECTION PRODUCT-PROCESS END -->
 
-<!-- SECTION UX-QUOTE BEGIN -->
-<section id="ux-quote" class="content-section-bg content-uxquote clearfix" style="background-image: url('assets/images/banner-section/2.jpg');">
+<!-- SECTION dt-quote BEGIN -->
+<div id="dt-quote" class="bg-para content-section-bg clearfix">
     <div class="mask-section"></div>
-    <div class="container">
+    {{#each model.loremIps as |lorem|}}
+    <div class="img-para" style="background-image: url('http://ec2-54-83-80-20.compute-1.amazonaws.com{{lorem.gallery}}');"></div>
+    <div class="content-para">
         <div class="row">
-            {{#each model.loremIps as |lorem|}}
             <div class="col-md-10 col-md-offset-1">
                 <div class="content-header">
                     <h2 class="title-content wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{lorem.title}}</h2>
                 </div>
             </div>
-            {{/each}}
         </div>
     </div>
-</section>
-<!-- SECTION UX-QUOTE END -->
+    {{/each}}
+</div>
+<!-- SECTION dt-quote END -->
 
 
 
-<!-- SECTION UX-WHATWEDO BEGIN -->
-<section id="ux-whatwedo" class="content-section content-uxwhatwedo bg-gray clearfix">
+<!-- SECTION dt-whatwedo BEGIN -->
+<section id="dt-whatwedo" class="content-section content-uxwhatwedo bg-gray clearfix">
     <div class="container">
 
         <div class="row">
@@ -138,7 +138,7 @@
         <div class="row uxwhatwedo-container">
             {{#each model.whatWe as |we|}}
             <div class="col-md-6 item-whatwedo clearfix wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
-                <div class="subitem-whatwedo">
+                <div class="subitem-whatwedo whatwedo-pink">
                     <figure>
                         <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{we.gallery}}" width="105" alt="">
                     </figure>
@@ -194,7 +194,7 @@
 
                 <div class="clearfix"></div>
                 <div class="text-center">
-                    <a href="#" class="btn btn-green-light wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">see more</a>
+                    <a href="#" class="btn btn-pink-pallete wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">see more</a>
                     <div class="space45"></div>
                     <p class="text-uppercase wow fadeInUp" data-wow-duration="1s" data-wow-delay="300ms">{{more.phone}}</p>
                 </div>
@@ -206,3 +206,7 @@
 </section>
 <!-- SECTION INFORMATION END -->
 {{app-footer}}
+
+{{else}}
+    {{partial "partials/lazy-loading"}}
+{{/if}}

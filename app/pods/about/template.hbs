@@ -1,5 +1,5 @@
+{{#if model.aboutUs}}
 {{app-header-subheader}}
-
 {{partial "partials/banner-about"}}
 
 <!-- SUBHEADER BEGIN -->
@@ -197,3 +197,7 @@
 <!-- SECTION INFORMATION END -->
 
 {{app-footer}}
+
+{{else}}
+    {{partial "partials/lazy-loading"}}
+{{/if}}

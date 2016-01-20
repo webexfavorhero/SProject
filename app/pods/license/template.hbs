@@ -1,3 +1,4 @@
+{{#if model.licensing}}
 {{app-header-subheader}}
 <!-- BANNER HOME BG BEGIN -->
 {{#each model.licensing as |lic|}}
@@ -378,3 +379,7 @@
     </div>
 </section>
 {{app-footer}}
+
+{{else}}
+    {{partial "partials/lazy-loading"}}
+{{/if}}

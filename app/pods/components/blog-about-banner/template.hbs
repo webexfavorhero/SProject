@@ -1,0 +1,24 @@
+<!-- BANNER BLOG BEGIN -->
+<section class="content-banner-blog clearfix">
+    <div class="bannerblog-carousel owl-carousel">
+        {{#each blogBanner as |bBanner|}}
+        <div class="item-bannerblog" style="background-image: url('http://ec2-54-83-80-20.compute-1.amazonaws.com{{bBanner.gallery}}');">
+            <div class="mask-banner"></div>
+
+            <div class="container">
+                <div class="content-banner">
+                    <div class="limit-banner">
+                        <h1>{{bBanner.title}}</h1>
+                        <h2 class="subtitle">{{bBanner.description}}</h2>    
+                    </div>
+                </div>
+            </div><!-- / .container --> 
+        </div>
+        {{/each}}
+
+    </div><!-- / .bannerblog-carousel -->
+    <a class="link-arrow">
+        <i class="fa fa-angle-double-down"></i>
+    </a>
+</section>
+<!-- BANNER BLOG END -->

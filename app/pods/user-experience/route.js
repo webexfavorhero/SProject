@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import Ux from '../../models/ux';
+import Ux from '../../models/user-experience';
 
 export default Ember.Route.extend({
 	model() {

@@ -1,0 +1,73 @@
+{{#if model.developers}}
+{{blog-header}}
+
+{{blog-about-banner blogBanner=model.blogBanner}}
+
+<!-- BLOG-ABOUT BEGIN -->
+<section class="content-section content-blog-about clearfix">
+    <div class="container">
+        {{#each model.blogAbout as |bAbout|}}
+        <div class="header-blog-about">
+            <h2 class="title-blog-section">{{bAbout.title}}</h2>
+            <p class="subtitle-blog-section">{{bAbout.description}}</p>
+        </div><!-- / .header-blog-about -->
+        {{/each}}
+        <div class="space30"></div>
+        <div class="space30"></div>
+
+        <div class="row blog-about-wrapper">
+            {{#each model.developers as |dev|}}
+            <div class="col-md-3 item-about-team clearfix">
+                
+                <div class="subitem-about-team">
+                    <figure class="clearfix">
+                        <a href="#" class="more-link">articles</a>
+                        <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{dev.authorImage}}" alt="" class="img-person">    
+                    </figure>
+                    
+                    <ul class="list-socmed-team">
+                        <li><a href="{{dev.emailUrl}}" class="email">
+                            <i class="fa fa-envelope"></i>
+                        </a></li>
+                        <li><a href="{{dev.facebookUrl}}" class="fb">
+                            <i class="fa fa-facebook"></i>
+                        </a></li>
+                        <li><a href="{{dev.twitterUrl}}" class="twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a></li>
+                        <li><a href="{{dev.linkedinUrl}}" class="linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </a></li>
+                    </ul><!-- / .list-socmed-team -->
+
+                    <h3>{{dev.authorName}}</h3>
+                    <span>{{dev.authorRole}}</span>
+                    
+
+                </div>
+                
+            </div><!-- / .col-md-3 .item-about-team -->
+            {{/each}}
+        
+
+            <div class="clearfix"></div>
+            <div class="space30"></div>
+
+            <p class="text-center">
+                <a href="" class="btn btn-line btn-line-gray">click to show blog articles</a>
+            </p>
+
+            <div class="clearfix"></div>
+            <div class="space30"></div>
+
+
+        </div><!-- / .row .blog-about-wrapper -->
+
+    </div>
+</section>
+<!-- BLOG-ABOUT END -->
+{{blog-footer}}
+
+{{else}}
+    {{partial "partials/lazy-loading"}}
+{{/if}}

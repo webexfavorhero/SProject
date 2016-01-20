@@ -1,0 +1,13 @@
+{{#if model.blogs}}
+{{blog-header}}
+
+{{blog-home-banner blogs=model.blogs}}
+
+{{#if model.categoryFilter}}
+    {{blog-home-category categoryFilter=model.categoryFilter blogs=model.blogs}}
+{{/if}}
+
+{{blog-footer}}
+{{else}}
+    {{partial "partials/lazy-loading"}}
+{{/if}}

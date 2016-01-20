@@ -8,6 +8,7 @@ var sciSer = [];
 var clientsCase = [];
 var loremIpsum = [];
 var cases = [];
+var blogs = [];
 
 export default Ember.Object.extend({
 	teamWorking() {
@@ -87,13 +88,22 @@ export default Ember.Object.extend({
 	  	});
 	  	return loremIpsum;
 	},
-	  cases() {
+	cases() {
 	    cases = [];
 	    Ember.$.getJSON('http://ec2-54-83-80-20.compute-1.amazonaws.com/api/cases', function(result){
-	      for (var i = 0; i < result.length; i ++) {
-	        cases.pushObject(result[i]);
-	      }
-	      });
-	      return cases;
-	  }
+	        for (var i = 0; i < result.length; i ++) {
+	            cases.pushObject(result[i]);
+	        }
+	    });
+	    return cases;
+	},
+	blogs() {
+	    blogs = [];
+	    Ember.$.getJSON('http://ec2-54-83-80-20.compute-1.amazonaws.com/api/blog-post', function(result){
+	        for (var i = 0; i < result.length; i ++) {
+	            blogs.pushObject(result[i]);
+	        }
+	    });
+	    return blogs;
+	}
 });

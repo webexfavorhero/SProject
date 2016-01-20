@@ -1,3 +1,4 @@
+{{#if model.ourClientsBanner}}
 {{app-header-subheader}}
 <!-- BANNER HOME BG BEGIN -->
 {{#each model.ourClientsBanner as |clientsBanner|}}
@@ -440,3 +441,7 @@
 </section>
 <!-- SECTION INFORMATION END -->
 {{app-footer}}
+
+{{else}}
+    {{partial "partials/lazy-loading"}}
+{{/if}}

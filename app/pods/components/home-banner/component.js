@@ -4,10 +4,9 @@ export default Ember.Component.extend({
   didInsertElement() {
     // BANNER-CAROUSEL
     Ember.$('.banner-carousel').owlCarousel({
-      animateOut: 'fadeOut',
       items: 1,
-      smartSpeed: 100,
-      autoplay: false,
+      smartSpeed: 1500,
+      autoplay: true,
       autoplayTimeout: 3000,
       loop: true,
       nav: true,

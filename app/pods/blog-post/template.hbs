@@ -1,0 +1,108 @@
+{{#if model.blogs}}
+{{blog-header}}
+
+{{blog-post-banner blogs=model.blogs}}
+
+{{#each model.specificBlog as |spBlog|}}
+<!-- BLOG-SINGLE BEGIN -->
+<div class="content-single">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                
+                <article class="clearfix">
+                    {{spBlog.body}}
+                </article>
+            </div>
+        </div>
+    </div><!-- / .container -->
+
+    <div class="bg-para clearfix">
+        <div class="mask-para"></div>
+        <div class="img-para"></div>
+        <div class="content-para"></div>
+    </div>
+    <div class="space30"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                
+                <div class="article-share">
+                    
+                    <div class="article-category">
+                        <h3>category</h3>
+                        <ul>
+                            <li>
+                                <a href="#">api</a>
+                            </li>
+                            <li>
+                                <a href=".{{spBlog.categorieId}}">{{spBlog.categorieName}}</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="article-share-socmed">
+                        <h3>share</h3>
+                        <ul>
+                            <li>
+                                <a href="#" class="fb">
+                                    <i class="fa fa-facebook"></i> facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="twitter">
+                                    <i class="fa fa-twitter"></i> twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="google-plus">
+                                    <i class="fa fa-google-plus"></i> Google+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="pinterest">
+                                    <i class="fa fa-pinterest"></i> Pinterest
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div><!-- / .article-share -->
+
+                <div class="article-author">
+                    <h2>about the author</h2>
+
+                    <div class="author-content clearfix">
+                        <figure>
+                            <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{spBlog.authorImage}}" alt="">
+                        </figure>
+                        <div class="author-desc">
+                            <h3>{{spBlog.author}}</h3>
+                            <p>{{spBlog.authorDescription}}</p>
+                        </div>
+                    </div>
+                </div><!-- / .article-author -->
+
+                {{blog-post-related}}
+
+                <div class="article-comment">
+                    <h2>comments</h2>
+
+                    <h1>this will place with discuss-comment</h1>
+                </div>
+
+            </div>
+        </div>
+    </div><!-- / .container -->
+
+</div>
+<!-- BLOG-SINGLE END -->
+
+{{/each}}
+
+{{blog-footer}}
+{{else}}
+    {{partial "partials/lazy-loading"}}
+{{/if}}

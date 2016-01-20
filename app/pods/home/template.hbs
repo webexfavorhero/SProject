@@ -1,8 +1,8 @@
+{{#if model.teamWorking}}
 {{app-header}}
 
-{{#if model.teamWorking}}
-  {{home-banner banners=model.teamWorking}}
-{{/if}}
+{{home-banner banners=model.teamWorking}}
+  
 <section id="home-enterprise" class="content-section content-homeenterprise clearfix">
   <div class="container">
 
@@ -350,69 +350,28 @@
     </div><!-- / .row -->
 
     <div class="row articles-container">
-
+      {{#each model.blogs as |blog|}}
       <div class="col-md-4 item-articles wow fadeInLeft" data-wow-duration="1s" data-wow-delay="250ms">
         <div class="subitem-articles clearfix">
           <div class="caption-articles">
             <header>
-              <p class="meta-extra">01.08.2015</p>
-              <h3>digital transformation & culture</h3>
+              <p class="meta-extra">{{blog.postDate}}</p>
+              <h3>{{blog.postTitle}}</h3>
             </header>
-            <a href="#" class="link">
+            <a href="blog-post/{{blog.postId}}" class="link">
               <i class="fa fa-mail-forward"></i>
             </a>
             <footer>
               <figure>
-                <img src="assets/images/user70.png" alt="">
+                <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{blog.authorImage}}" alt="">
               </figure>
-              <p class="meta-authors">By Renan Barreto</p>
+              <p class="meta-authors">By {{blog.author}}</p>
             </footer>
           </div>
-          <img src="assets/images/blog/1.jpg" alt="">
+          <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{blog.featureImage}}" alt="">
         </div>
       </div><!-- / .item-articles -->
-
-      <div class="col-md-4 item-articles wow fadeInUp" data-wow-delay="250ms" data-wow-duration="1s">
-        <div class="subitem-articles clearfix">
-          <div class="caption-articles">
-            <header>
-              <p class="meta-extra">01.08.2015</p>
-              <h3>digital transformation & culture</h3>
-            </header>
-            <a href="#" class="link">
-              <i class="fa fa-mail-forward"></i>
-            </a>
-            <footer>
-              <figure>
-                <img src="assets/images/user70.png" alt="">
-              </figure>
-              <p class="meta-authors">By Renan Barreto</p>
-            </footer>
-          </div>
-          <img src="assets/images/blog/2.jpg" alt="">
-        </div>
-      </div><!-- / .item-articles -->
-
-      <div class="col-md-4 item-articles wow fadeInRight" data-wow-duration="1s" data-wow-delay="250ms" >
-        <div class="subitem-articles clearfix">
-          <div class="caption-articles">
-            <header>
-              <p class="meta-extra">01.08.2015</p>
-              <h3>digital transformation & culture</h3>
-            </header>
-            <a href="#" class="link">
-              <i class="fa fa-mail-forward"></i>
-            </a>
-            <footer>
-              <figure>
-                <img src="assets/images/user70.png" alt="">
-              </figure>
-              <p class="meta-authors">By Renan Barreto</p>
-            </footer>
-          </div>
-          <img src="assets/images/blog/3.jpg" alt="">
-        </div>
-      </div><!-- / .item-articles -->
+      {{/each}}
 
     </div><!-- / .articles-container -->
 
@@ -425,3 +384,7 @@
   </div>
 </section>
 {{app-footer}}
+
+{{else}}
+    {{partial "partials/lazy-loading"}}
+{{/if}}

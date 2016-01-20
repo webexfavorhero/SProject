@@ -1,3 +1,4 @@
+{{#if model.bePart}}
 {{app-header}}
 <!-- BANNER HOME BG BEGIN -->
 <section class="content-section-bg clearfix" style="background-image: url('assets/images/banner-slider/6.jpg');">
@@ -229,3 +230,7 @@
 </section>
 <!-- SECTION INFORMATION END -->
 {{app-footer}}
+
+{{else}}
+    {{partial "partials/lazy-loading"}}
+{{/if}}

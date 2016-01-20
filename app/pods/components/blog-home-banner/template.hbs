@@ -1,0 +1,41 @@
+
+<!-- BANNER BLOG BEGIN -->
+<section class="content-banner-blog clearfix">
+    <div class="bannerblog-carousel owl-carousel">
+        {{#each blogs as |blog|}}
+        <div class="item-bannerblog" style="background-image: url('http://ec2-54-83-80-20.compute-1.amazonaws.com{{blog.featureImage}}');">
+            <div class="mask-banner"></div>
+
+            <div class="container">
+                <div class="content-banner">
+                    <h1 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">{{blog.featureImage}}</h1>
+                    <ul class="list-banner-blog wow fadeInUp" data-wow-duration="1s" data-wow-delay="250ms">
+                        <li class="item banner-blog-user clearfix">
+                            <figure>
+                                <img src="http://ec2-54-83-80-20.compute-1.amazonaws.com{{blog.authorImage}}">
+                            </figure>
+                            <h4 class="title-banner">created by</h4>
+                            <h5 class="title-user"><a href="#">{{blog.author}}</a></h5>
+                        </li>
+                        <li class="item banner-blog-category clearfix">
+                            <h4 class="title-banner">category</h4>
+                            <div class="category-wrapper">
+                                <a href="#" class="category-link">api</a>
+                                <a href=".{{blog.categorieId}}" class="category-link">{{blog.categorieName}}</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="clearfix"></div>
+                    <div class="space30"></div>
+                    <a href="#" class="btn btn-blue-real wow fadeInUp" data-wow-duration="1s" data-wow-delay="300ms">read article</a>
+                </div>
+            </div><!-- / .container -->
+        </div>
+        {{/each}}
+    </div><!-- / .bannerblog-carousel -->
+    <a class="link-arrow">
+        <i class="fa fa-angle-double-down"></i>
+    </a>
+</section>
+<!-- BANNER BLOG END -->

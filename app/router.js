@@ -6,7 +6,15 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('ux');
+  this.route('blog-about');
+  this.route('blog-home');
+  this.route('blog-post', { path: 'blog-post/:blogId' });
+  this.route('smart-apis');
+  this.route('digital-transformation');
+  this.route('data-science');
+  this.route('devops-cloud');
+  this.route('business-process');
+  this.route('user-experience');
   this.route('team');
   this.route('services');
   this.route('product');

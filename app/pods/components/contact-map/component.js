@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   didInsertElement() {
     Ember.$('#map').gmap({
-      'center': '-6.94010,107.62575',
+      'center': '-23.574127,-46.642094',
       'zoom': 20,
       scrollwheel: false,
       mapTypeId: window.google.maps.MapTypeId.HYBRID,

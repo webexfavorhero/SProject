@@ -11,7 +11,8 @@ export default Ember.Route.extend({
 			sciSer: new Home().sciSer(),
 			clientsCase: new Home().clientsCase(),
 			loremIpsum: new Home().loremIpsum(),
-			cases: new Home().cases()
+			cases: new Home().cases(),
+			blogs: new Home().blogs()
 	    });
 	}
 });

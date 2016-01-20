@@ -1,3 +1,4 @@
+{{#if model.ourAwePro}}
 {{app-header-subheader}}
 <!-- BANNER HOME BG BEGIN -->
 {{#each model.ourAwePro as |ourAwe|}}
@@ -218,3 +219,7 @@
 </section>
 <!-- SECTION INFORMATION END -->
 {{app-footer}}
+
+{{else}}
+    {{partial "partials/lazy-loading"}}
+{{/if}}
